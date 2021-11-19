@@ -16,7 +16,6 @@ namespace EHI.WebAPI
 {
     public class Startup
     {
-        readonly string allowSpecificOrigins = "_allowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EHI.Data", "EHI.Data\EHI.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EHI.Core", "EHI.Core\EHI.Core.csproj", "{8FFD7CFD-A646-44A0-9711-2D165223C2DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHI.TestApi", "EHI.TestApi\EHI.TestApi.csproj", "{7CA4F1F8-8B96-4759-A17E-7BACF2C04145}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EHI.TestApi", "EHI.TestApi\EHI.TestApi.csproj", "{7CA4F1F8-8B96-4759-A17E-7BACF2C04145}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

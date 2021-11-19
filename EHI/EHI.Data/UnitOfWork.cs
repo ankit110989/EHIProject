@@ -18,7 +18,7 @@ namespace EHI.Data
             this._context = context;
         }
 
-        public IRepository<Contact> ContactRepository => _contactRepository ?? new Repository<Contact>(_context);
+        public IRepository<Contact> ContactRepository => _contactRepository = _contactRepository ?? new Repository<Contact>(_context);
 
         public async Task<int> CommitAsync()
         {
