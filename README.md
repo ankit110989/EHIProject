@@ -14,12 +14,12 @@ Database Setup:
 Backend Project Structure:
 
 EHI
-		EHI.Core : This folder contains the common things which will be shared by all layers in the project.
-		EHI.Data: This layer will be responsible for connecting with data providers (SQL Serve Express).
-		EHI.Services: This folder contains the business logic for the application.
-		EHI.WebApi: It is the point of access for our application.
-		EHI.TestApi: It contains the basic test cases for unit testing. 
-
+├── EHI.Core : This folder contains the common things which will be shared by all layers in the project.
+├── EHI.Data: This layer will be responsible for connecting with data providers (SQL Serve Express).
+├── EHI.Services: This folder contains the business logic for the application.
+├── EHI.WebApi: It is the point of access for our application.
+├── EHI.TestApi: It contains the basic test cases for unit testing. 
+		
 
 Backend Project Setup:
 
