@@ -16,4 +16,5 @@ Backend Project Setup:
 3) Update the connecting string in ContactUnitTest.cs file in EHI.ContactUnitTest Project.
 2) Build the project.
 3) Make EHI.WebApi as startup project. Then Run.
-4) WebAPI will run on  http://localhost:4200.
+4) WebAPI will run on  http://localhost:5000
+5) Swagger will be available on http://localhost:5000/index.html
