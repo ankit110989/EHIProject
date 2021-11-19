@@ -1,6 +1,5 @@
 # EHIProject
 
-
 Frontend Project Setup
 1) Clone the repository.
 2) Open Angular App "EHIApp" in Visual Studio Code and run the command "npm install".
@@ -26,7 +25,7 @@ Backend Project Setup:
 1) Open the "EHI" project in Visual Studio by double clicking on "EHI.sln" file.
 2) Update the connecting string in appsettings.json file in EHI.WebApi Project.
 3) Update the connecting string in ContactUnitTest.cs file in EHI.ContactUnitTest Project.
-2) Build the project.
+2) Build the solution.
 3) Make EHI.WebApi as startup project. Then Run.
 4) WebAPI will run on  http://localhost:5000
 5) Swagger will be available on http://localhost:5000/index.html
