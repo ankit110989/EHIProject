@@ -118,10 +118,21 @@ namespace EHI.TestApi
         [TestMethod]
         public void DeleteContactTest()
         {
+
             ContactController contactController = new ContactController(_contactService, _mapper);
-            IEnumerable<Contact> contacts = _contactService.GetAllContacts().Result;
-            var lastRecord = contacts.Last();
-            var data = contactController.DeleteContact(lastRecord.Id).Result;
+
+            SaveContactViewModel contact = new SaveContactViewModel()
+            {
+                FirstName = "Ankit",
+                LastName = "Kumar",
+                Email = "ankit110989@gmail.com",
+                Phone = "9888114646"
+            };
+
+            var result = contactController.CreateContact(contact).Result;
+            var contactViewModel = (result.Result as OkObjectResult).Value as ContactViewModel;
+            
+            var data = contactController.DeleteContact(contactViewModel.Id).Result;
             Assert.IsInstanceOfType(data, typeof(OkResult));
         }
 
@@ -145,9 +156,19 @@ namespace EHI.TestApi
         public void ChangeContactStatusTest()
         {
             ContactController contactController = new ContactController(_contactService, _mapper);
-            IEnumerable<Contact> contacts = _contactService.GetAllContacts().Result;
-            var lastRecord = contacts.Last();
-            var data = contactController.ChangeContactStatus(lastRecord.Id).Result;
+
+            SaveContactViewModel contact = new SaveContactViewModel()
+            {
+                FirstName = "Ankit",
+                LastName = "Kumar",
+                Email = "ankit110989@gmail.com",
+                Phone = "9888114646"
+            };
+
+            var result = contactController.CreateContact(contact).Result;
+            var contactViewModel = (result.Result as OkObjectResult).Value as ContactViewModel;
+
+            var data = contactController.ChangeContactStatus(contactViewModel.Id).Result;
             Assert.IsInstanceOfType(data, typeof(OkResult));
         }
 

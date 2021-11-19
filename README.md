@@ -1,5 +1,6 @@
 # EHIProject
 
+
 Frontend Project Setup
 1) Clone the repository.
 2) Open Angular App "EHIApp" in Visual Studio Code and run the command "npm install".
@@ -8,6 +9,17 @@ Frontend Project Setup
 
 Database Setup:
 1) Run the CreateTable.sql file in Microsoft Sql Server. This will create a database named 'EHI' and a table named 'Contact' .
+
+
+Backend Project Structure:
+
+EHI
+		EHI.Core : This folder contains the common things which will be shared by all layers in the project.
+		EHI.Data: This layer will be responsible for connecting with data providers (SQL Serve Express).
+		EHI.Services: This folder contains the business logic for the application.
+		EHI.WebApi: It is the point of access for our application.
+		EHI.TestApi: It contains the basic test cases for unit testing. 
+
 
 Backend Project Setup:
 
