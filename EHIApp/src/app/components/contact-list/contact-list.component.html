@@ -1,0 +1,101 @@
+<div class="container">
+
+    <nav class="navbar navbar-light">
+        <span class="navbar-brand mb-0 h1">Contact List</span>
+        <div class="my-2 my-lg-0">
+            <button type="button" class="btn btn-success" (click)="openModal(1, null)">Create Contact</button>
+        </div>
+    </nav>
+
+
+    <table class="table table-hover">
+        <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+        <tr *ngFor="let contact of contacts">
+            <td>{{ contact.firstName }}</td>
+            <td>{{ contact.lastName }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.phone }}</td>
+            <td>{{ contact.isActive ? 'Active' : 'Deactive' }}</td>
+            <td>
+                <button type="button" class="btn btn-info" (click)="openModal(3, contact)">View</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" (click)="openModal(2, contact)">Edit</button>&nbsp;&nbsp;
+                <button type="button" (click)="deleteContact(contact.id)" class="btn btn-danger">Delete</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-warning" (click)="changeStatus(contact.id)">{{ contact.isActive ? 'De-Activate' : 'Activate' }}</button>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" #showModalBtn
+        style="display: none;">
+    </button>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal Contact</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+
+                    <div class="form-group">
+                        <label for="title">First Name:</label>
+                        <input formControlName="FirstName" maxlength="50" id="firstName" type="text" class="form-control">
+                        <div *ngIf="f.FirstName.touched && f.FirstName.invalid" class="vaildation-msg">
+                            <div *ngIf="f.FirstName.errors.required">This field is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Last Name:</label>
+                        <input formControlName="LastName" maxlength="50" id="lastName" type="text" class="form-control">
+                        <div *ngIf="f.LastName.touched && f.LastName.invalid" class="vaildation-msg">
+                            <div *ngIf="f.LastName.errors.required">This field is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Email:</label>
+                        <input formControlName="Email" id="email" maxlength="50" type="text" class="form-control">
+                        <div *ngIf="f.Email.touched && f.Email.invalid" class="vaildation-msg">
+                            <div *ngIf="f.Email.errors.required">This field is required.</div>
+                            <div *ngIf="f.Email.errors.email">Invalid email.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Phone:</label>
+                        <input formControlName="Phone" id="phone" maxlength="10" type="text" class="form-control">
+                        <div *ngIf="f.Phone.touched && f.Phone.invalid" class="vaildation-msg">
+                            <div *ngIf="f.Phone.errors.required">This field is required.</div>
+                            <div *ngIf="f.Phone.errors.email">Invalid phone.</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" [hidden]="mode == 3">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" #hideModalBtn>Close</button>
+                <button type="button" class="btn btn-primary" (click)="submit()"
+                    [disabled]="!form.valid">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

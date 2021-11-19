@@ -1,8 +1,18 @@
 # Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+EHI/.vs
+EHI/EHI.Core/bin
+EHI/EHI.Core/obj
+EHI/EHI.Data/bin
+EHI/EHI.Data/obj
+EHI/EHI.Services/bin
+EHI/EHI.Services/obj
+EHI/EHI.WebApi/bin
+EHI/EHI.WebApi/obj
+EHI/EHI.TestApi/bin
+EHI/EHI.TestApi/obj
+EHI/packages
+EHIApp/node_modules
+
 
 # Other files and folders
 .settings/
